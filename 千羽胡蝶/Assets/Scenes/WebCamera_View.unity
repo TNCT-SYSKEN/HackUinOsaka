@@ -230,6 +230,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1920983599935520, guid: c6bf7eb5fa5a7224e8dfe43ec146099b, type: 2}
+      propertyPath: m_TagString
+      value: Panel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6bf7eb5fa5a7224e8dfe43ec146099b, type: 2}
   m_IsPrefabAsset: 0
