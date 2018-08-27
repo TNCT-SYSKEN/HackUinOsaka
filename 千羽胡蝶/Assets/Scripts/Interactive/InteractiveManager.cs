@@ -19,19 +19,35 @@ public class InteractiveManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Triggerを更新
-        //string trigger = webcamera.GetComponent<WebcamCodeReader>().Read(webCamTexture);
-
-        switch (inte)
+        if (webCamTexture == null || !webCamTexture.isPlaying)
         {
-            case InteTrigger.wireworks:
+            return;
+        }
+        string trigger = webcamera.GetComponent<WebcamCodeReader>().Read(webCamTexture);
+        if (trigger != null)
+        {
+
+            if (trigger == "wireworks")
+            {
                 fire.GetComponent<Fireworks>().make_fireworks();
-                break;
-            case InteTrigger.sample1:
-                Debug.Log("sample1");
-                break;
-            default:
-                Debug.Log("End Interactive");
-                break;
+            }
+            else
+            {
+                //wireworks以外のオブジェクトの場合else if (trigger == "objectName")で追加
+            }
+
+            switch (inte)
+            {
+                case InteTrigger.wireworks:
+                    fire.GetComponent<Fireworks>().make_fireworks();
+                    break;
+                case InteTrigger.sample1:
+                    Debug.Log("sample1");
+                    break;
+                default:
+                    Debug.Log("End Interactive");
+                    break;
+            }
         }
     }
 }
