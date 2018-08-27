@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Panel
+  - Fireworks
   layers:
   - Default
   - TransparentFX

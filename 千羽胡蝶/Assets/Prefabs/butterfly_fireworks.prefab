@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423311076138538}
   m_Layer: 0
-  m_Name: "\u82B1\u706B_\u8776"
+  m_Name: butterfly_fireworks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

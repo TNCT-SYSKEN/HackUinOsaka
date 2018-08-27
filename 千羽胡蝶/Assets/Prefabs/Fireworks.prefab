@@ -208,9 +208,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4913058756939236}
+  - component: {fileID: 114933197436981284}
   m_Layer: 0
-  m_Name: "\u82B1\u706B\u7389"
-  m_TagString: Untagged
+  m_Name: Fireworks
+  m_TagString: Fireworks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,6 +449,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   y_rotate: 0
+--- !u!114 &114933197436981284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812670294065394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3121f3ecfae73d545be8b1c459dc2e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxObject: 1
 --- !u!114 &114940866733075138
 MonoBehaviour:
   m_ObjectHideFlags: 1
