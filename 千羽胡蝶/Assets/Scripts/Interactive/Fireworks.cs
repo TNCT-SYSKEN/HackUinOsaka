@@ -7,7 +7,7 @@ public class Fireworks : MonoBehaviour {
     //プレハブ
     //public GameObject prefab_wireworks;
     //最大の花火の数を設定
-    public int MaxObject = 1;
+    public int MaxObject;
     //打ち上げる花火の座標
     private Vector3 random_posi;
     //打ち上げる花火の角度
