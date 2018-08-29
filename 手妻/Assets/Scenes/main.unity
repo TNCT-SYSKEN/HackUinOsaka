@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 101602458}
   - component: {fileID: 101602457}
   - component: {fileID: 101602456}
+  - component: {fileID: 101602459}
   m_Layer: 0
   m_Name: gold_swim_023
   m_TagString: Untagged
@@ -201,12 +202,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101602455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.517186, y: -2.4335482, z: 0}
+  m_LocalPosition: {x: -9.51, y: -4.16, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101602459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101602455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8dd4f387a6e74b7b907fa7c37250edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_x_grid: 9.78
+  min_x_grid: -10.2
+  max_y_grid: -3.83
+  min_y_grid: -5.02
 --- !u!1 &305755207
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +315,7 @@ Transform:
   m_LocalScale: {x: 1.9897201, y: 1.081539, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372439958
 GameObject:
@@ -393,7 +409,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &657259805
 Prefab:
@@ -539,7 +555,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383229735
 GameObject:
@@ -633,7 +649,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419172036
 GameObject:
