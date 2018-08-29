@@ -7,33 +7,31 @@ public class InteractiveManager : MonoBehaviour {
     //Triggerを宣言
     public enum InteTrigger {wireworks, sample1};
     public InteTrigger inte;
-    public GameObject webcamera;
     public GameObject fire;
 
-    private WebCamTexture WebcamTexture;
+    private WebCamTexture webCamTexture;
+    private WebcamCodeReader qr_reader;
 
     // Use this for initialization
     void Start () {
         //Planeのレンダラー
-        Renderer renderer = GetComponent<Renderer>();
-        WebcamTexture = new WebCamTexture();
+        //Renderer renderer = GetComponent<Renderer>();
+        webCamTexture = new WebCamTexture();
+        qr_reader = new WebcamCodeReader();
         //mainTextureにWebCamTextureを指定する
-        renderer.material.mainTexture = WebcamTexture;
-        WebcamTexture.Play();
-        
-        
+        //renderer.material.mainTexture = webCamTexture;
+        webCamTexture.Play();
     }
 	
 	// Update is called once per frame
 	void Update () {
         //Triggerを更新
         //string trigger = webcamera.GetComponent<WebcamCodeReader>().Read(webCamTexture);
-                if (WebcamTexture == null || !WebcamTexture.isPlaying) {
+        if (webCamTexture == null || !webCamTexture.isPlaying) {
             return;
         }
-        string trigger = webcamera.GetComponent<WebcamCodeReader>().Read(WebcamTexture);
-        if (trigger != null)
-        {
+        string trigger = qr_reader.Read(webCamTexture);
+        if (trigger == "fireworks") {
             Debug.Log(trigger);
             fire.GetComponent<Fireworks>().make_fireworks();
             /*
@@ -46,18 +44,16 @@ public class InteractiveManager : MonoBehaviour {
             //wireworks以外のオブジェクトの場合else if (trigger == "objectName")で追加
             }
             */
-
         }
-        switch (inte)
-        {
+        switch (inte) {
             case InteTrigger.wireworks:
                 fire.GetComponent<Fireworks>().make_fireworks();
                 break;
             case InteTrigger.sample1:
-                Debug.Log("sample1");
+                //Debug.Log("sample1");
                 break;
             default:
-                Debug.Log("End Interactive");
+                //Debug.Log("End Interactive");
                 break;
         }
     }

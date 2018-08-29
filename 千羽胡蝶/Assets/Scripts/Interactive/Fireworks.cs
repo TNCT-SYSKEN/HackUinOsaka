@@ -25,7 +25,8 @@ public class Fireworks : MonoBehaviour {
         if (count_object <= MaxObject)
         {
             //ランダムな座標
-            random_posi = new Vector3(Random.Range(0, Screen.width), 0, 0);
+            random_posi = new Vector3(Random.Range(-100,100) ,Random.Range(0, 10), 50);
+            //random_posi = new Vector3(Random.Range(0, Screen.width), 0, 0);
             //ランダムな回転
             random_rota = new Vector3(0, 0, Random.Range(-30, 30));
             //vec -> qua
