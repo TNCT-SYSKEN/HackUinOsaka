@@ -15,7 +15,8 @@ public class WebcamCodeReader {
 
         webCamTexture.GetPixels32(flame_data);
 
-        Result result = qr_reader.Decode(flame_data, width, height);
+        Result result = null;
+        result = qr_reader.Decode(flame_data, width, height);
 
         if (result != null) {
             return result.Text;

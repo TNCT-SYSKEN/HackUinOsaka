@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Webcamera_Show : MonoBehaviour {
 
@@ -24,8 +25,8 @@ public class Webcamera_Show : MonoBehaviour {
             return;
         }
         string qr_result = qr_reader.Read(webCamTexture);
-        if (qr_result != null) { 
-            Debug.Log(qr_result);
+        if (qr_result != null) {
+            //Debug.Log(qr_result);
         }
     }
 }
