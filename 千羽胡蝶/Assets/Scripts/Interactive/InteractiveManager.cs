@@ -14,14 +14,7 @@ public class InteractiveManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //Planeのレンダラー
-        Renderer renderer = GetComponent<Renderer>();
         WebcamTexture = new WebCamTexture();
-        //mainTextureにWebCamTextureを指定する
-        renderer.material.mainTexture = WebcamTexture;
-        WebcamTexture.Play();
-        
-        
     }
 	
 	// Update is called once per frame
