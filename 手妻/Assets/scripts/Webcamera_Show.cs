@@ -1,31 +1,51 @@
 ﻿using UnityEngine;
+using System;
 
 public class Webcamera_Show : MonoBehaviour {
-
+    public GameObject fireworks;
     public int FPS = 30;
 
+    private float mainCameraSize;
     private WebCamTexture webCamTexture;
-    private WebcamCodeReader qr_reader;
+    private WebcamCodeReader qrReader;
 
-	void Start () {
+    private string Fireworks_name = "fireworks";
+    private string qr_result;
+
+    private float fireTime = 2.55f;
+    private float resetCount;
+
+    void Start () {
         //Planeのレンダラー
-        Renderer renderer = GetComponent<Renderer>();
-        webCamTexture = new WebCamTexture();
-        
+        //Renderer renderer = GetComponent<Renderer>();
         //mainTextureにWebCamTextureを指定する
-        renderer.material.mainTexture = webCamTexture;
-        webCamTexture.Play();
+        //renderer.material.mainTexture = webCamTexture;
 
-        qr_reader = new WebcamCodeReader();
+        mainCameraSize = Camera.main.orthographicSize;
+        webCamTexture = new WebCamTexture();
+        qrReader = new WebcamCodeReader();
+
+        webCamTexture.Play();
 	}
 
     void Update() {
-        if (webCamTexture == null || !webCamTexture.isPlaying) {
-            return;
-        }
-        string qr_result = qr_reader.Read(webCamTexture);
-        if (qr_result != null) { 
-            Debug.Log(qr_result);
+        Debug.Log(resetCount);
+        resetCount += Time.deltaTime;
+        if (resetCount < fireTime) {
+            if (webCamTexture == null || !webCamTexture.isPlaying) {
+                return;
+            }
+
+            qr_result = qrReader.Read(webCamTexture);
+
+            if (qr_result != null && qr_result != "404") {
+                Debug.Log("meu");
+                Instantiate(fireworks, new Vector3(UnityEngine.Random.Range(-mainCameraSize, mainCameraSize), UnityEngine.Random.Range(-mainCameraSize, mainCameraSize), 5), new Quaternion(0, -90, 0, 0));
+            }
+
+            resetCount += 1f;
+        } else if (resetCount > fireTime*2) {
+            resetCount = 0f;
         }
     }
 }

@@ -21,6 +21,6 @@ public class WebcamCodeReader {
             return result.Text;
         }
 
-        return null;
+        return "404";
     }
 }
