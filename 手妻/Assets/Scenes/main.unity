@@ -850,11 +850,6 @@ Transform:
   m_Father: {fileID: 236001332}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &216120059 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198791163457321490, guid: 680fb88974c184dfda3eb64f8a61d600,
-    type: 2}
-  m_PrefabInternal: {fileID: 477123193}
 --- !u!1 &236001331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,48 +2203,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &477123193
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1436642869}
-    m_Modifications:
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -4.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4013408630477790, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 680fb88974c184dfda3eb64f8a61d600, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &542435851
 Prefab:
   m_ObjectHideFlags: 0
@@ -2289,27 +2242,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114995894099363414, guid: cb5cbeda94ad1c64481cafe5f064a53a,
-        type: 2}
-      propertyPath: fireworks
-      value: 
-      objectReference: {fileID: 1704410439191014, guid: 680fb88974c184dfda3eb64f8a61d600,
-        type: 2}
-    - target: {fileID: 114995894099363414, guid: cb5cbeda94ad1c64481cafe5f064a53a,
-        type: 2}
-      propertyPath: fireworksSeed
-      value: 
-      objectReference: {fileID: 1611360853}
-    - target: {fileID: 114995894099363414, guid: cb5cbeda94ad1c64481cafe5f064a53a,
-        type: 2}
-      propertyPath: fireworksBoombParticle
-      value: 
-      objectReference: {fileID: 1611360856}
-    - target: {fileID: 114995894099363414, guid: cb5cbeda94ad1c64481cafe5f064a53a,
-        type: 2}
-      propertyPath: fireworksSeedParticle
-      value: 
-      objectReference: {fileID: 216120059}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb5cbeda94ad1c64481cafe5f064a53a, type: 2}
   m_IsPrefabAsset: 0
@@ -5044,11 +4976,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1436642869 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4924091272661068, guid: cb5cbeda94ad1c64481cafe5f064a53a,
-    type: 2}
-  m_PrefabInternal: {fileID: 542435851}
 --- !u!1 &1444554558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5389,16 +5316,6 @@ Transform:
   m_Father: {fileID: 236001332}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1611360853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1704410439191014, guid: 680fb88974c184dfda3eb64f8a61d600,
-    type: 2}
-  m_PrefabInternal: {fileID: 477123193}
---- !u!198 &1611360856 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198849486458933772, guid: 680fb88974c184dfda3eb64f8a61d600,
-    type: 2}
-  m_PrefabInternal: {fileID: 477123193}
 --- !u!1 &1646800354
 GameObject:
   m_ObjectHideFlags: 0

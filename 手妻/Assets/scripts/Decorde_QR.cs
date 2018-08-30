@@ -18,7 +18,11 @@ public class WebcamCodeReader {
         Result result = qr_reader.Decode(flame_data, width, height);
 
         if (result != null) {
-            return result.Text;
+            //result.TextをUnicode(リトルエンディアンのUTF-16)に変換
+            byte[] QRTextBytes = System.Text.Encoding.Default.GetBytes(result.Text);
+            string QRText = System.Text.Encoding.Unicode.GetString(QRTextBytes);
+            
+            return QRText;
         }
 
         return "404";

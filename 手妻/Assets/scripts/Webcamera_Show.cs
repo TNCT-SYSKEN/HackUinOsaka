@@ -2,8 +2,10 @@
 
 public class Webcamera_Show : MonoBehaviour {
     public GameObject fireworksSeed;
-    public ParticleSystem fireworksBoombParticle;
+    [SerializeField]
     public ParticleSystem fireworksSeedParticle;
+    [SerializeField]
+    public ParticleSystem fireworksBombParticle;
     public int FPS = 30;
 
     private float mainCameraSize;
@@ -16,6 +18,31 @@ public class Webcamera_Show : MonoBehaviour {
     private float fireTime = 2.55f;
     private float resetCount;
 
+    //花火の種と爆発の色を取得
+    /*
+    private ParticleSystem.MinMaxGradient FireworksSeedColor {
+        get {
+            var color = fireworksSeedParticle.main.startColor;
+            return color;
+        }
+        set {
+            Color32 color = new Color32(
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256)
+            );
+        }
+
+    }
+    private ParticleSystem.MinMaxGradient FirworksBombColor {
+        get {
+            var color = fireworksBombParticle.main.startColor;
+            return color;
+        }
+    }
+    */
+
     void Start () {
         mainCameraSize = Camera.main.orthographicSize;
         webCamTexture = new WebCamTexture();
@@ -26,19 +53,20 @@ public class Webcamera_Show : MonoBehaviour {
 
     void Update() {
         resetCount += Time.deltaTime;
+        //カウントの値が一定以下の場合に花火の生成処理をする
         if (resetCount < fireTime) {
             if (webCamTexture == null || !webCamTexture.isPlaying) {
                 return;
             }
 
             //花火の種と爆発の色をランダムに指定
-            fireworksBoombParticle.startColor = new Color32(
+            fireworksSeedParticle.startColor = new Color32(
                 (byte)Random.Range(0, 256),
                 (byte)Random.Range(0, 256),
                 (byte)Random.Range(0, 256),
                 (byte)Random.Range(0, 256)
             );
-            fireworksSeedParticle.startColor = new Color32(
+            fireworksBombParticle.startColor = new Color32(
                 (byte)Random.Range(0, 256),
                 (byte)Random.Range(0, 256),
                 (byte)Random.Range(0, 256),
