@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System;
 
 public class Webcamera_Show : MonoBehaviour {
-    public GameObject fireworks;
+    public GameObject fireworksSeed;
+    public ParticleSystem fireworksBoombParticle;
+    public ParticleSystem fireworksSeedParticle;
     public int FPS = 30;
 
     private float mainCameraSize;
@@ -16,11 +17,6 @@ public class Webcamera_Show : MonoBehaviour {
     private float resetCount;
 
     void Start () {
-        //Planeのレンダラー
-        //Renderer renderer = GetComponent<Renderer>();
-        //mainTextureにWebCamTextureを指定する
-        //renderer.material.mainTexture = webCamTexture;
-
         mainCameraSize = Camera.main.orthographicSize;
         webCamTexture = new WebCamTexture();
         qrReader = new WebcamCodeReader();
@@ -29,18 +25,35 @@ public class Webcamera_Show : MonoBehaviour {
 	}
 
     void Update() {
-        Debug.Log(resetCount);
         resetCount += Time.deltaTime;
         if (resetCount < fireTime) {
             if (webCamTexture == null || !webCamTexture.isPlaying) {
                 return;
             }
 
+            //花火の種と爆発の色をランダムに指定
+            fireworksBoombParticle.startColor = new Color32(
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256)
+            );
+            fireworksSeedParticle.startColor = new Color32(
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256),
+                (byte)Random.Range(0, 256)
+            );
+
             qr_result = qrReader.Read(webCamTexture);
 
             if (qr_result != null && qr_result != "404") {
-                Debug.Log("meu");
-                Instantiate(fireworks, new Vector3(UnityEngine.Random.Range(-mainCameraSize, mainCameraSize), UnityEngine.Random.Range(-mainCameraSize, mainCameraSize), 5), new Quaternion(0, -90, 0, 0));
+                Instantiate(fireworksSeed, new Vector3(
+                    Random.Range(-mainCameraSize, mainCameraSize),
+                    Random.Range(-mainCameraSize, mainCameraSize),
+                    5
+                ),
+                new Quaternion(0, -90, 0, 0));
             }
 
             resetCount += 1f;
