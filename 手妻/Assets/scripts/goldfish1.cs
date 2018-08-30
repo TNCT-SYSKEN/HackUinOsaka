@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class goldfish : MonoBehaviour {
+public class goldfish1 : MonoBehaviour {
     public float max_x_grid = 9.78f; //波右の限界値
     public float min_x_grid = -10.2f; //波左の限界値
     public float max_y_grid = -3.83f; //波上の限界値
@@ -26,10 +26,10 @@ public class goldfish : MonoBehaviour {
             if(timeElapsed < swim_time){
                 if(gold_dir == 'r'){
                     Vector3 now_pos = this.gameObject.transform.position;
-                    this.gameObject.transform.position = new Vector3(now_pos.x + 0.05f, now_pos.y, now_pos.z);
+                    this.gameObject.transform.position = new Vector3(now_pos.x - 0.05f, now_pos.y, now_pos.z);
                 }else if(gold_dir == 'l'){
                     Vector3 now_pos = this.gameObject.transform.position;
-                    this.gameObject.transform.position = new Vector3(now_pos.x - 0.05f, now_pos.y, now_pos.z);
+                    this.gameObject.transform.position = new Vector3(now_pos.x + 0.05f, now_pos.y, now_pos.z);
                 }
             }else{
                 if(gold_dir == 'r'){
